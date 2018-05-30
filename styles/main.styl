@@ -1,0 +1,572 @@
+//Stylus preprocessor, SMACSS methodology
+//Mixins
+vendor(prop, args)
+    -webkit-{prop} args
+    -moz-{prop} args
+    {prop} args
+border-radius()
+    vendor('border-radius', arguments)
+box-shadow()
+    vendor('box-shadow', arguments)
+txt(size, spaceL, weight, transformT, colorT)
+    font-size size
+    letter-spacing spaceL
+    font-weight weight
+    text-transform transformT
+    color colorT
+menuFlex()
+    .menu-nav
+        visibility hidden
+        text-align center
+        & ul
+            width 100%
+            margin-top 20px
+            padding 0
+        & li
+            width 90%
+            margin 10px 5% 10px 5%
+            txt(22px, 4px, 900, uppercase, grey2)
+    .hamburger
+        width 40px
+        height 30px
+        border-top 5px solid #ddd
+        visibility visible
+        float right
+        z-index 100
+//Colors
+pink = #985e5b
+grey = #f7f7f7
+grey1 = #d9d9d9
+grey2 = #1e2633
+grey3 = #eeeff3
+//Base styles
+html, body
+    font-family 'Helvetica', 'Arial', sans-serif
+    margin 0
+    padding 0
+    width 100%
+    height 100%
+h1,h2,h3,h4,h5,h6
+    font-family serif
+    font-weight bold
+    margin 0
+for num in (1..6) //Here we will get h1-h6
+    h{num}
+        font-size (28 - num*2)px
+        line-height (28 - num*2)px
+.clear
+    clear both
+//Layout
+.l-container
+    width 100%
+.l-topbar
+    width 100%
+    height 40px
+    padding 20px 0 25px 0
+    position absolute
+    top 0
+    left 0
+    z-index 99
+    background white
+.l-main-pic
+    width 100%
+    height 100vh
+    &-maxim, &-maxim-l
+        position absolute
+        bottom 65px
+        right 20%
+    &-maxim-l
+        right auto
+        left 20%
+main
+    width 100%
+    margin 80px auto
+.l-box
+    width 56%
+    padding 0 22% 80px 22%
+    float left
+    & span
+        display block
+    &-grey-t
+        margin 0px 0 80px 0
+        padding 2% 22% 0 22%
+        background grey
+    &-pic1, &-pic1B, &-pic1C, &-pic2, &-pic3
+        width 35%
+        float left
+        & img
+            display block
+            width 100%
+            position relative
+    &-pic1
+        & img:first-child
+            z-index 1
+            transform translateX(50px)
+        & img:last-child
+            z-index 2
+            transform translateY(-100px)
+    &-pic1B
+        & img:first-child
+            z-index 2
+        & img:last-child
+            z-index 1
+            transform translate(50px, -100px)
+    &-pic1C
+        & img:first-child
+            z-index 1
+        & img:last-child
+            z-index 2
+            transform translate(-50px, -100px)
+    &-pic2
+        & img:first-child
+            z-index 2
+        & img:last-child
+            z-index 1
+            transform translate(-50px, -100px)
+    &-pic3 //left align
+        & img:first-child
+            transform translateY(-100px)
+    &-txt
+        width 47%
+        float left
+    &-type1
+        margin-left 17%
+    &-type2
+        margin-right 17%
+.l-maxim
+    width 40%
+    margin 0 30% 0px 30%
+    float left
+.l-home-nav
+    width 60%
+    margin-top 30px
+    padding 0 20% 0 20%
+    background grey
+    float left
+.l-home-banner
+    width 100%
+    height 200px
+    float left
+    margin-bottom 80px
+.l-home-blog
+    width 60%
+    margin 150px 0 80px 0
+    padding 0 20% 0 20%
+    float left
+    background grey
+.l-footer
+    width 60%
+    float left
+    padding 0 20% 0 20%
+    background grey3
+//Modules
+.center-pic
+    background-position center
+    background-size cover
+.menu
+    width 60%
+    height 26px
+    padding 17px 20% 17px 20%
+    &-title
+        float left
+    &-visible
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100vh
+        z-index 99
+        visibility visible !important
+        background white
+        & ul
+            float left
+    &-nav
+        float right
+        & ul
+            margin 0
+        & li
+            display block
+            float left
+            margin 0 13px 0 13px
+            txt(10px, 2px, 900, uppercase, grey2)
+            &.is-active
+                color pink
+.hamburger
+    width 0
+    height 0
+    border 0
+    visibility hidden
+    position relative
+    transition 0.3s ease-in-out
+    cursor pointer
+    outline none
+    margin-top -12px
+    &::before, &::after
+        content ''
+        position absolute
+        width 100%
+        border-top 5px solid #ddd
+        top 10px
+    &::after
+        top 25px
+    &-active
+        transform rotate(405deg)
+        border 0 !important
+        transition 0.3s ease-in-out
+        &::after
+            transform rotate(450deg) translateX(-15px)
+.head-mainp
+    &-about, &-menu, &-reservation, &-contact
+        @extend .center-pic
+        transition-duration 0.65s
+    &-home
+        background-image url('../images/mainSlider0.jpg')
+        & img
+          width 100%
+          height 100vh
+          object-fit cover
+    &-about
+        background-image url('../images/about-main-pic.png')
+    &-menu
+        background-image url('../images/menu-main-pic.png')
+    &-reservation
+        background-image url('../images/reservation-main-pic.png')
+    &-contact
+        background-image url('../images/contact-main-pic.png')
+.mainSlider
+    &-prev, &-next
+        position absolute
+        bottom 80px
+        left 20%
+        width 26px
+        height 26px
+        border 2px solid white
+    &-next
+        left calc(20% + 40px)
+.maxim
+    &-first
+        txt(34px, 4px, 900, none, white)
+        display block
+    &-second
+        txt(25px, 2px, bold, none, pink)
+.section-content
+    &-type2
+        text-align right
+    &-type3
+        text-align center
+    &-main
+        txt(38px, 5px, 900, none, grey2)
+    &-maxim
+        txt(12px, 1px, bold, uppercase, pink)
+    &-txt
+        txt(12px, 0px, bold, none, grey2)
+        line-height 24px
+    &-quote
+        txt(24px, 4px, normal, none, grey2)
+    &-quote-author
+        txt(12px, 2px, bold, uppercase, black)
+.show
+    &-box-l, &-box-r, &-box-c
+        width 24px
+        height auto
+    &-box-l
+        float left
+    &-box-r
+        float right
+    &-box-c
+        margin 35px auto
+    &-dot
+        width 4px
+        height 5px
+        float left
+        border-radius 50%
+        margin-right 4px
+        background grey2
+.nav-btn
+    width calc(33.3333% - 22px)
+    border-left 1px solid grey1
+    border-right 1px solid grey1
+    padding 100px 10px 100px 10px
+    float left
+    &:first-child, &:last-child
+        border 0
+        width calc(33.3333% - 20px)
+    &-txt
+        txt(18px, 2px, normal, none, grey2)
+.banner
+    &-bg
+        background-image url('../images/home-banner.png')
+        @extends .center-pic
+    &-btn
+        width 10%
+        height auto
+        margin 84px auto 0 auto
+        padding 16px 0 16px
+        background grey2
+        z-index 3
+    &-txt
+        txt(14px, 2px, bold, uppercase, white)
+.blog
+    &-bg1
+        @extends .center-pic
+        background-image url('../images/home-blog-pic1.png')
+    &-bg2
+        @extends .center-pic
+        background-image url('../images/home-blog-pic2.png')
+    &-bg3
+        @extends .center-pic
+        background-image url('../images/home-blog-pic3.png')
+    &-bg-white
+        width calc(100% - 130px)
+        height calc(100% - 130px)
+        margin 15px
+        padding 50px
+        background white
+        z-index 2
+    &-box
+        width 29.3333%
+        height 100%
+        float left
+        margin 0 6% 0 6%
+        transform translateY(-100px)
+        &:first-child, &:last-child
+            margin 0
+
+    &-date
+        txt(16px, 2px, bold, uppercase, grey1)
+    &-txt
+        margin-top 30px
+        txt(12px, 3px, bold, uppercase, grey2)
+.border-space
+    border-bottom 2px solid grey3
+.clear-pad-b
+    padding-bottom 0px
+.footer
+    &-box
+        width calc(33.3333% - 10px)
+        padding 25px 5px 0 5px
+        height 45px
+        float left
+    &-txt
+        txt(10px, 0px, 900, uppercase, grey2)
+        & ul
+            float right
+            margin 0
+            padding 0 0 0 5px
+        & li
+            width 20px
+            height 20px
+            display block
+            float left
+            border 2px solid grey2
+            border-radius(50%)
+            margin 0 5px 0 5px
+    &-fb, &-tw, &-gplus
+        background-position center
+        background-repeat no-repeat
+    &-fb
+        background-image url('../images/media-fb.png')
+    &-tw
+        background-image url('../images/media-tw.png')
+    &-gplus
+        background-image url('../images/media-g+.png')
+@media (max-width: 1324px) and (min-width: 1137px)
+    menuFlex()
+    .l-box
+        width 66%
+        padding 0 17% 70px 17%
+    .l-home-nav
+        width 70%
+        margin-top 30px
+        padding 0 15% 0 15%
+    .l-home-blog
+        width 70%
+        margin 140px 0 70px 0
+        padding 0 15% 0 15%
+    .l-footer
+        width 70%
+        padding 0 15% 0 15%
+    .menu
+        width 70%
+        padding 17px 15% 17px 15%
+@media (max-width: 1137px) and (min-width: 997px)
+    menuFlex()
+    .l-box
+        width 76%
+        padding 0 12% 50px 12%
+    .l-home-nav
+        width 80%
+        margin-top 25px
+        padding 0 10% 0 10%
+    .l-home-blog
+        width 80%
+        margin 120px 0 50px 0
+        padding 0 10% 0 10%
+    .l-footer
+        width 80%
+        padding 0 10% 0 10%
+    .menu
+        width 80%
+        padding 17px 10% 17px 10%
+@media (max-width: 997px) and (min-width: 851px)
+    menuFlex()
+    .l-box
+        width 86%
+        padding 0 7% 40px 7%
+    .l-home-nav
+        width 90%
+        margin-top 20px
+        padding 0 5% 0 5%
+    .l-home-blog
+        width 90%
+        margin 110px 0 40px 0
+        padding 0 5% 0 5%
+    .l-footer
+        width 90%
+        padding 0 5% 0 5%
+    .menu
+        width 90%
+        padding 17px 5% 17px 5%
+    .blog-box
+        width 30.6666%
+        margin 0 4% 0 4%
+        transform translateY(-50px)
+    .banner-btn
+        width 20%
+@media (max-width: 850px) and (min-width: 500px)
+    menuFlex()
+    .l-box
+        &-pic1, &-pic1B, &-pic1C, &-pic2, &-pic3
+            width 100%
+        &-txt
+            width 100%
+            margin-bottom 80px
+        &-type1
+            margin-left 0%
+        &-type2
+            margin-right 0%
+    .l-home-nav
+        width 96%
+        margin-top 30px
+        padding 0 2% 0 2%
+    .l-main-pic
+        &-maxim, &-maxim-l
+            bottom 30px
+    .l-footer
+        width 96%
+        padding 0 2% 0 2%
+    .menu
+        width 96%
+        padding 17px 2% 17px 2%
+    .mainSlider
+        &-prev, &-next
+            bottom 100px
+    .blog-box
+        width 100%
+        margin 0 0 50px 0
+        transform translateY(-70px)
+        &:first-child
+            margin-bottom 50px
+    .banner-btn
+        width 30%
+    @media (max-width 595px)
+        .footer-box
+            width calc(33.3333% - 10px)
+            padding 15px 5px 10px 5px
+            height 45px
+@media (max-width 500px)
+    menuFlex()
+    .l-main-pic
+        &-maxim, &-maxim-l
+            bottom 30px
+            right 5%
+        &-maxim-l
+            left 5%
+    .l-box
+        width 86%
+        padding 0 7% 40px 7%
+        &-pic1, &-pic1B, &-pic1C, &-pic2, &-pic3
+            width calc(100% - 50px)
+            margin 0 25px 0 25px
+        &-pic1
+            & img:first-child
+                transform translateX(25px)
+            & img:last-child
+                transform translateY(-50px)
+        &-pic1B
+            & img:last-child
+                transform translate(25px, -50px)
+        &-pic1C
+            & img:last-child
+                transform translate(-25px, -50px)
+        &-pic2
+            & img:last-child
+                transform translate(-25px, -50px)
+        &-pic3
+            & img:first-child
+                transform translateY(-50px)
+        &-txt
+            width 100%
+            margin-bottom 80px
+        &-type1
+            margin-left 0%
+        &-type2
+            margin-right 0%
+    .l-home-nav
+        width 90%
+        margin-top 30px
+        padding 0 5% 0 5%
+    .l-maxim
+        width 90%
+        margin 0 5% 0px 5%
+    .l-home-blog
+        width 94%
+        margin 110px 0 60px 0
+        padding 0 3% 0 3%
+    .l-footer
+        width 94%
+        padding 0 3% 0 3%
+    .section-content-main
+        txt(34px, 2px, 900, none, grey2)
+    .menu
+        width 90%
+        padding 17px 5% 17px 5%
+    .mainSlider
+        &-prev, &-next
+            bottom 100px
+    .banner-btn
+        width 50%
+    .nav-btn
+        width calc(100% - 40px)
+        border 0
+        border-top 1px solid grey1
+        border-bottom 1px solid grey1
+        padding 50px 20px 50px 20px
+        &:first-child, &:last-child
+            width calc(100% - 40px)
+            border 0
+    .blog-box
+        width 100%
+        margin 0 0 50px 0
+        transform translateY(-70px)
+        &:first-child
+            margin-bottom 50px
+    @media (max-width 430px) and (min-width 390px)
+        .l-footer
+            width 94%
+            padding 0 3% 0 3%
+        .footer-box
+            width calc(33.3333% - 10px)
+            padding 10px 5px 10px 5px
+            height 50px
+    @media (max-width 390px)
+        .l-footer
+            width 90%
+            padding 0 5% 0 5%
+        .footer
+            &-box
+                width calc(100% - 50px)
+                padding 25px 25px 0 25px
+                text-align center
+            &-txt ul
+                float right

@@ -1,0 +1,186 @@
+include ../basicTemplate.pug
+doctype html
+html
+  +basicTemplate('Renome: menu', 'Renome, restauracja, Kostacki, psd, strona', 'Rafał Gabriel Kostecki', '#', '#', 'menu')
+  body
+    div.l-container
+      div.l-topbar
+        div.menu 
+          header.menu-title
+            img(src='./images/renome-logo.png')
+          div(class='hamburger' tabindex='1')
+          nav(class='menu-nav' id='menuNav')
+            ul
+              a(href='./index.html')
+                li home
+              a(href='./about.html')
+                li about
+              a(href='#')
+                li.is-active menu
+              a(href='./reservation.html')
+                li reservations
+              a(href='./contact.html')
+                li contact
+      div.l-main-pic.head-mainp-menu
+          div.l-main-pic-maxim-l
+            span.maxim-first menu
+            span.maxim-second delicious and beautiful
+      main
+        section.l-box.clear-pad-b
+          div.l-box-txt.l-box-type2.section-content-type2
+            span.section-content-main discover
+            p.section-content-maxim our restaurant menu
+            p.section-content-txt In our menu you will find a great variety of delicious food that will satisfy the needs and tastes of everyone. We strive to source the highest quality ingredients for all of our dishes thereby enhancing the quality of services.
+          div.l-box-pic2
+            img(src='./images/menu-discover-pic1.png')
+            img(src='./images/menu-discover-pic2.png')
+        nav.l-menu-nav
+          ul.section-content-type3.menu-meals-nav
+            li breakfast
+            li.menu-meals-current lunch
+            li drinks
+            li desserts
+        div.l-menu-nav-border
+        article.l-menu
+          p
+            img(src='./images/menu-1pic.png')
+          section.l-dish
+            div.l-dish-img.menu-meals-dish1
+            div.l-dish-desc
+              p.menu-meals-title Chicken wings
+              span.menu-meals-desc It`s all about flavour and fun, fun, fun. Toss fried chicken with a finger licking sauce spiked with chilli and fresh ginger.
+            div.l-dish-price
+              span.menu-meals-dolar $9
+              span.menu-meals-cent .95
+          section.l-dish
+            div.l-dish-img.menu-meals-dish2
+            div.l-dish-desc
+              p.menu-meals-title Dumplings
+              span.menu-meals-desc Small dumplings filled with spiced lamb. Tossed in a tomato sauce and served with sumac-flavoured Greek youghurt.
+            div.l-dish-price
+              span.menu-meals-dolar $5
+              span.menu-meals-cent .70
+          section.l-dish
+            div.l-dish-img.menu-meals-dish3
+            div.l-dish-desc
+              p.menu-meals-title French onion soup
+              span.menu-meals-desc French onion soup is deeply savoury and hearty - and cheesy croutons make it extra special!
+            div.l-dish-price
+              span.menu-meals-dolar $5
+              span.menu-meals-cent .80
+          section.l-dish
+            div.l-dish-img.menu-meals-dish4
+            div.l-dish-desc
+              p.menu-meals-title Mini chilli pretzels
+              span.menu-meals-desc These freshly-baked savouries beat anything out of a packet.
+            div.l-dish-price
+              span.menu-meals-dolar $2
+              span.menu-meals-cent .10
+          p
+            img(src='./images/menu-2pic.png')
+          section.l-dish
+            div.l-dish-img.menu-meals-dish5
+            div.l-dish-desc
+              p.menu-meals-title Atlantic Salomon
+              span.menu-meals-desc Havediner on the table super fast with clever shortcuts and this easy salomon and Greek rice salad.
+            div.l-dish-price
+              span.menu-meals-dolar $7
+              span.menu-meals-cent .30
+          section.l-dish
+            div.l-dish-img.menu-meals-dish6
+            div.l-dish-desc
+              p.menu-meals-title Fish tacos
+              span.menu-meals-desc Fish is a healthy, low-fat taco filling, and it tastes absolutely delicious.
+            div.l-dish-price
+              span.menu-meals-dolar $5
+              span.menu-meals-cent .45
+          section.l-dish
+            div.l-dish-img.menu-meals-dish7
+            div.l-dish-desc
+              p.menu-meals-title Sesame tuna
+              span.menu-meals-desc Sesame seeds form a tasty crust and rich in calcium, copper and magnesium
+            div.l-dish-price
+              span.menu-meals-dolar $4
+              span.menu-meals-cent .60
+          section.l-dish
+            div.l-dish-img.menu-meals-dish8
+            div.l-dish-desc
+              p.menu-meals-title Parmesan chicken
+              span.menu-meals-desc This crunchy crumbed chicken tastes fabulous paired with the fresh flavours of zucchini, mint and olives.
+            div.l-dish-price
+              span.menu-meals-dolar $8
+              span.menu-meals-cent .35
+          p
+            img(src='./images/menu-3pic.png')
+          section.l-dish
+            div.l-dish-img.menu-meals-dish9
+            div.l-dish-desc
+              p.menu-meals-title Seared scallops
+              span.menu-meals-desc Fish is a healthy, low-fat taco filling, and it tastes absolutely delicious.
+            div.l-dish-price
+              span.menu-meals-dolar $3
+              span.menu-meals-cent .80
+          section.l-dish
+            div.l-dish-img.menu-meals-dish10
+            div.l-dish-desc
+              p.menu-meals-title Poached salomon
+              span.menu-meals-desc Decidedly gourmet poached salom dish with a zingy watercress mayonnasie.
+            div.l-dish-price
+              span.menu-meals-dolar $9
+              span.menu-meals-cent .25
+          section.l-dish
+            div.l-dish-img.menu-meals-dish11
+            div.l-dish-desc
+              p.menu-meals-title Green curry
+              span.menu-meals-desc This balance of sweet, sour and salty flavours is a hallmark of Thai cooking.
+            div.l-dish-price
+              span.menu-meals-dolar $7
+              span.menu-meals-cent .70
+          p
+            img(src='./images/menu-4pic.png')
+          section.l-dish
+            div.l-dish-img.menu-meals-dish12
+            div.l-dish-desc
+              p.menu-meals-title Lobster salad
+              span.menu-meals-desc A simple lobster salad with butter and just a hint of mayoannaise so that you can still taste the sweet lobster meat.
+            div.l-dish-price
+              span.menu-meals-dolar $6
+              span.menu-meals-cent .30 
+          section.l-dish
+            div.l-dish-img.menu-meals-dish13
+            div.l-dish-desc
+              p.menu-meals-title Chicken & orange salad
+              span.menu-meals-desc With juicy oranges and a youghurt dressing, this chicken salad is a treat on any spring table.
+            div.l-dish-price
+              span.menu-meals-dolar $8
+              span.menu-meals-cent .50
+          section.l-dish
+            div.l-dish-img.menu-meals-dish14
+            div.l-dish-desc
+              p.menu-meals-title Winter salad
+              span.menu-meals-desc This is a simple winter salad, fresh and crisp.
+            div.l-dish-price
+              span.menu-meals-dolar $4
+              span.menu-meals-cent .15
+          section.l-dish
+            div.l-dish-img.menu-meals-dish15
+            div.l-dish-desc
+              p.menu-meals-title Thai-style salad
+              span.menu-meals-desc This is a simple salad in thai-style, fresh, juicy and crispy.
+            div.l-dish-price
+              span.menu-meals-dolar $5
+              span.menu-meals-cent .05      
+      footer.l-footer
+        div.footer-box
+          img(src='./images/renome-logo.png')
+        div.footer-box.section-content-type3
+          span.footer-txt copyright 2015 renome by estetiq
+        div.footer-box.section-content-type2
+          span.footer-txt follow us: 
+            ul
+              li.footer-fb 
+              li.footer-tw 
+              li.footer-gplus
+    //Scripts
+    script(src='./js/menu.js')
+

@@ -1,0 +1,79 @@
+include ../basicTemplate.pug
+doctype html
+html
+  +basicTemplate('Renome: contact', 'Renome, restauracja, Kostacki, psd, strona', 'Rafał Gabriel Kostecki', '#', '#', 'contact')
+  body
+    div.l-container
+      div.l-topbar
+        div.menu 
+          header.menu-title
+            img(src='./images/renome-logo.png')
+          div(class='hamburger' tabindex='1')
+          nav(class='menu-nav' id='menuNav')
+            ul
+              a(href='./index.html')
+                li home
+              a(href='./about.html')
+                li about
+              a(href='./menu.html')
+                li menu
+              a(href='./reservation.html')
+                li reservations
+              a(href='#')
+                li.is-active contact
+      div.l-main-pic.head-mainp-contact
+          div.l-main-pic-maxim-l
+            span.maxim-first contact
+            span.maxim-second we welcome you in our restaurant
+      main
+        section.l-box.clear-pad-b
+          div.l-box-txt.l-box-type2.section-content-type2
+            span.section-content-main happy
+            p.section-content-maxim to hear from you, contact us
+            p.section-content-txt Please feel free to contact us with any questions or to make reservations. If no one is available to take your call please leave a message. We will contact you as soon as possible.
+          div.l-box-pic2
+            img(src='./images/home-contact-pic1.png')
+            img(src='./images/home-contact-pic2.png')
+        article.l-contact-box
+          section.l-contact-form
+            p.form-title write a message
+            div.form-details-box
+              div.form-details-topic First Name* 
+              input
+            div.form-details-box
+              div.form-details-topic Last Name* 
+              input
+            div.form-details-box
+              div.form-details-topic Email* 
+              input
+            div.form-details-box
+              div.form-details-topic Subject
+              input
+            div.form-details-box-t2
+              div.form-details-topic Message* 
+              input
+            div.form-details-send-btn send
+          section.l-contact-details
+            p.form-title contact details
+            span.form-subject address
+            span.form-desc 355 e sth st, manhattan, ny 10003
+            span.form-subject phone
+            span.form-desc +1 939 777 55 33
+            span.form-subject email
+            span.form-desc reservation@renome.com
+        div(id='googleMap' class='l-map')
+      footer.l-footer
+        div.footer-box
+          img(src='./images/renome-logo.png')
+        div.footer-box.section-content-type3
+          span.footer-txt copyright 2015 renome by estetiq
+        div.footer-box.section-content-type2
+          span.footer-txt follow us: 
+            ul
+              li.footer-fb 
+              li.footer-tw 
+              li.footer-gplus 
+    //Scripts
+    script(src='./js/menu.js')
+    script(src='./js/googleMap.js')
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBeggAbJ2ITA2YbQN0E6-lM4MsaQzuTZ5k&callback=localizationMap')

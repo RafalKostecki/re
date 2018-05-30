@@ -1,0 +1,73 @@
+include ../basicTemplate.pug
+doctype html
+html
+  +basicTemplate('Renome: about', 'Renome, restauracja, Kostacki, psd, strona', 'Rafał Gabriel Kostecki', '#', '#', 'about')
+  body
+    div.l-container
+      div.l-topbar
+        div.menu 
+          header.menu-title
+            img(src='./images/renome-logo.png')
+          div(class='hamburger' tabindex='1')
+          nav(class='menu-nav' id='menuNav')
+            ul
+              a(href='./index.html')
+                li home
+              a(href='#')
+                li.is-active about
+              a(href='./menu.html')
+                li menu
+              a(href='./reservation.html')
+                li reservations
+              a(href='./contact.html')
+                li contact
+      div.l-main-pic.head-mainp-about
+          div.l-main-pic-maxim-l
+            span.maxim-first about
+            span.maxim-second we create delicious memories
+      main
+        section.l-box.border-space-type1
+          div.l-box-pic1
+            img(src='./images/home-about-pic1.png')
+            img(src='./images/home-about-pic2.png')
+          div.l-box-txt.l-box-type1
+            span.section-content-main history
+            p.section-content-maxim wonderful of your town
+            p.section-content-txt Renome it is renowned restaurant delight the senses with elegant ambiance, gracious service and delectable menus in the heart of Manhattan`s. The distinctive setting boasts contemporary furnishings and finishes atop the restaurant`s grand modern architecture. Renome offers the Bellecour room for private dining where guests enjoy creative foods and sumptuous late night desserts. Is one of the few Manhattan restaurants to have a coveted 3-star Michelin rating.
+        section.l-box.clear-pad-b
+          div.l-box-txt.l-box-type2.section-content-type2
+            span.section-content-main goals
+            p.section-content-maxim what we want to achieve
+            p.section-content-txt Our guest come for all occasions - a drink after work, a quick bite before a movie, a business dinner and much more. Our goal is to satisfy  the needs of every visitor to our restaurant every day improving the quality of our services.
+          div.l-box-pic1C
+            img(src='./images/about-goals-pic1.png')
+            img(src='./images/about-goals-pic2.png')
+        article.l-about-g
+          div.about-g-pics
+            div.about-g-pic1
+            div.about-g-pic2
+            div.about-g-pic3
+            div.about-g-pic4
+            div.about-g-pic5
+            div.about-g-pic6
+          div.about-g-hours.section-content-type3
+            p.section-content-maxim opening hours
+            span.about-g-txt-d monday - friday
+            p.about-g-txt-h 9:00 - 22:00
+            span.about-g-txt-d saturday - sunday
+            span.about-g-txt-h 10:00 - 21:00
+      footer.l-footer
+        div.footer-box
+          img(src='./images/renome-logo.png')
+        div.footer-box.section-content-type3
+          span.footer-txt copyright 2015 renome by estetiq
+        div.footer-box.section-content-type2
+          span.footer-txt follow us: 
+            ul
+              li.footer-fb 
+              li.footer-tw 
+              li.footer-gplus
+    //Scripts
+    script(src='./js/menu.js')
+          
+

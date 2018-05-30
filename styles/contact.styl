@@ -1,0 +1,109 @@
+@import 'main.styl'
+//Layout
+.l-contact 
+    &-box
+        width 60%
+        height auto
+        float left
+        margin 0 20% 0 20%
+    &-form 
+        width 70%
+        float left
+    &-details
+        width calc(30% - 20px)
+        float left
+        margin-left 20px
+.l-map
+    width 90%
+    height 350px
+    float left
+    margin 80px 5% 80px 5%
+//Modules
+formDetailsHeight = 22px;
+.form-details
+    &-box, &-box-t2
+        width calc(50% - 30px)
+        height formDetailsHeight
+        margin 5px 30px 25px 0
+        float left
+        border-bottom 2px solid grey3
+        & input
+            width calc(100% - 85px)
+            height calc(100% - 7px)
+            float left
+            margin 0 0 5px 5px
+            border 0
+            outline none
+            txt(14px, 0px, normal, none, grey2)
+    &-box-t2
+        width calc(100% - 150px)
+    &-topic
+        width 80px
+        height 100%
+        float left
+        txt(12px, 0px, bold, none, grey2)
+    &-send-btn
+        width 90px
+        height formDetailsHeight - 3px
+        float left
+        margin-right 30px
+        padding-top 5px
+        background grey3
+        txt(12px, 1px, bold, uppercase, grey2)
+        text-align center
+.form
+    &-title
+        txt(16px, 2px, bold, uppercase, pink)
+    &-subject
+        display block
+        txt(12px, 0px, bold, uppercase, pink)
+    &-desc
+        display block
+        margin 5px 0 20px 0
+        txt(11px, 0px, bold, uppercase, grey2)
+@media (max-width: 1324px) and (min-width: 1137px)
+    .l-contact-box
+        width 70%
+        margin 0 15% 0 15%
+@media (max-width: 1137px) and (min-width: 997px)
+    .l-contact-box
+        width 80%
+        margin 0 10% 0 10%
+@media (max-width: 997px) and (min-width: 851px)
+    .l-contact-box
+        width 90%
+        margin 0 5% 0 5%
+@media (max-width: 850px) and (min-width: 650px)
+    .l-contact-box
+        width 96%
+        margin 0 2% 0 2%
+@media (max-width 650px)
+    .l-contact
+        &-box
+            width 98%
+            margin 0 1% 0 1%
+        &-form 
+            width 90%
+            margin 0 5% 0 5%
+        &-details
+            width 90%
+            margin 30px 5% 0 5%
+        @media (max-width 500px)
+            .l-contact
+                &-form, &-details 
+                    width 94%
+                    margin 0 3% 0 3%
+                &-details
+                    margin 30px 3% 0 3%
+            .form-details
+                &-box, &-box-t2
+                    width calc(100% - 30px)
+                    border-bottom 2px solid grey3
+                    & input
+                        width calc(100% - 75px)
+                &-box-t2
+                    width calc(100% - 30px)
+                &-topic
+                    width 70px
+                &-send-btn
+                    margin-right 15px

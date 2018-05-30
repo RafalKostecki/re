@@ -1,0 +1,97 @@
+include ../basicTemplate.pug
+doctype html
+html
+  +basicTemplate('Renome: reservation', 'Renome, restauracja, Kostacki, psd, strona', 'Rafał Gabriel Kostecki', '#', '#', 'reservation')
+  body
+    div.l-container
+      div.l-topbar
+        div.menu 
+          header.menu-title
+            img(src='./images/renome-logo.png')
+          div(class='hamburger' tabindex='1')
+          nav(class='menu-nav' id='menuNav')
+            ul
+              a(href='./index.html')
+                li home
+              a(href='./about.html')
+                li about
+              a(href='./menu.html')
+                li menu
+              a(href='#')
+                li.is-active reservations
+              a(href='./contact.html')
+                li contact
+      div.l-main-pic.head-mainp-reservation
+          div.l-main-pic-maxim-l
+            span.maxim-first reservation
+            span.maxim-second book your table at our restaurant now!
+      main
+        section.l-box.clear-pad-b.border-space
+          div.l-box-pic1B
+            img(src='./images/home-reservation-pic1.png')
+            img(src='./images/home-reservation-pic2.png')
+          div.l-box-txt.l-box-type1
+            span.section-content-main online
+            p.section-content-maxim booking, it`s as an apple pie
+            p.section-content-txt When you finnalize a reservation with OpenTable they will send you a confirmation email immediately. We will also call you on the date of your reservation to confirm your table.
+            p.section-content-txt If you do not receive an email, or do not hear from the restaurant, we would recommend calling to confirm your table and verify your reservation booking (+1 939 777 55 33).
+        div.block-on-line make a reservation
+        section.l-box.reservation
+          div.reservation-box
+            div.reservation-icon
+              img(src='./images/reservation-calendar.png')
+            div(id='date-box' class='reservation-list') Date
+            select(id='reservation' class='reservation-arrow')
+          div.reservation-box
+            div.reservation-icon
+              img(src='./images/reservation-clock.png')
+            select.reservation-select
+              option 12:00 AM
+              option 1:00 PM
+              option 2:00 PM
+              option 3:00 PM
+              option 4:00 PM
+              option 5:00 PM
+              option 6:00 PM
+              option 7:00 PM
+              option 8:00 PM
+              option 9:00 PM
+              option 10:00 PM
+          div.reservation-box
+            div.reservation-icon
+              img(src='./images/reservation-people.png')
+            select.reservation-select
+              option 2 People
+              option 3 People
+              option 4 People
+              option 5 People
+              option 6 People
+          //Calendar
+          div(id='calendar' class='calendar')
+            div(id='calendar-main' class='calendar-main')
+              div.calendar-btn-prev &#10096;
+              div.calendar-btn-next &#10097;
+              div(id='month' class='calendar-month') Month
+              div(id='year' class='calendar-year') Year
+            div.calendar-daysOfWeek
+              ul(id='spaceForWeek')
+              //Here will be days of week
+            div.calendar-days
+              ul(id='spaceForDays')
+              //Here will be days of month  
+          div.banner-btn.section-content-type3.banner-btn-within
+            span.banner-txt find a table
+        footer.l-footer
+          div.footer-box
+            img(src='./images/renome-logo.png')
+          div.footer-box.section-content-type3
+            span.footer-txt copyright 2015 renome by estetiq
+          div.footer-box.section-content-type2
+            span.footer-txt follow us: 
+              ul
+                li.footer-fb 
+                li.footer-tw 
+                li.footer-gplus
+    //Scripts
+    script(src='./js/menu.js')          
+    script(src='./js/calendar.js')

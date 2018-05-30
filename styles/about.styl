@@ -1,0 +1,88 @@
+@import 'main.styl'
+//Layout
+.l-about-g
+    width 60%
+    height 150px
+    padding 80px 20% 80px 20%
+    float left
+    border-top 2px solid grey3
+//Modules
+.about-g
+    &-pics, &-hours
+        float left
+    &-pics
+        width 70%
+        height 100%
+    &-hours
+        width calc(30% - 54px)
+        height calc(100% - 29px)
+        padding-top 25px
+        margin-left 50px
+        border 2px solid grey3
+        & span 
+            display block
+        & p 
+            margin 0px 0 15px 0
+    &-txt-d
+        txt(11px, 1px, 900, uppercase, grey2)
+    &-txt-h
+        txt(10px, 1px, 900, uppercase, grey2)
+for $num in (1..6) 
+    .about-g-pic{$num}
+        width 12.5%
+        height 100%
+        float left
+        background-size cover
+        background-position left
+        background-image url('../images/about-gallery-pic' + $num + '.png')
+.about-g-pic6
+    width 37.5%
+.border-space
+    &-type1
+        border-bottom 2px solid grey3
+        padding-bottom 30px
+        margin-bottom 80px
+@media (max-width: 1324px) and (min-width: 1137px)
+    .l-about-g
+        width 70%
+        padding 80px 15% 80px 15%
+@media (max-width: 1137px) and (min-width: 997px)
+    .l-about-g
+        width 80%
+        padding 80px 10% 80px 10%
+@media (max-width: 997px) and (min-width: 851px)
+    .l-about-g
+        width 90%
+        padding 80px 5% 80px 5%
+    .about-g-hours
+        width calc(30% - 39px)
+        height calc(100% - 24px)
+        padding-top 20px
+        margin-left 35px
+@media (max-width: 850px) and (min-width: 500px)
+    .l-about-g
+        width 96%
+        padding 80px 2% 80px 2%
+        & p 
+            margin 10px 0 15px 0
+    .about-g-hours
+        width calc(30% - 14px)
+        height calc(100% - 9px)
+        padding-top 5px
+        margin-left 10px
+@media (max-width 500px) 
+    .l-about-g
+        width 90%
+        height auto
+        padding 80px 5% 80px 5%
+        & p 
+            margin 10px 0 15px 0
+    .about-g-pics
+        width 100%
+        height 150px
+    .about-g-hours
+        width calc(100% - 4px)
+        height 150px
+        padding-top 25px
+        margin-left 0
+        border 2px solid grey3
